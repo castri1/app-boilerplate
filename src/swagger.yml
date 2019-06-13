@@ -1,0 +1,71 @@
+swagger: '2.0'
+info:
+  version: 0.0.1
+  title: 'Logistics Engine API'
+  description: 'Logistics engine api documentation'
+  contact:
+    name: 'Mutant Technologies'
+host: '/'
+basePath: 'api'
+schemes:
+  - 'https'
+  - 'http'
+tags:
+  - name: 'subpedidos'
+    description: 'Subpedidos related endpoints'
+paths:
+  /subpedidos:
+    post:
+      tags:
+        - 'subpedidos'
+      summary: 'Create a new subpedido in LE'
+      description: ''
+      consumes:
+        - 'application/json'
+      produces:
+        - 'application/json'
+      parameters:
+        - in: 'body'
+          name: 'body'
+          description: 'Subpedido that will be processed by the LE'
+          required: true
+          schema:
+            $ref: '#/definitions/Subpedido'
+      responses:
+        200:
+          description: OK
+securityDefinitions:
+  api_key:
+    type: 'apiKey'
+    name: 'api_key'
+    in: 'header'
+definitions:
+  Subpedido:
+    type: object
+    properties:
+      idSubpedido:
+        type: 'integer'
+      idDependencia:
+        type: 'integer'
+      idCiudad:
+        type: 'integer'
+      nombreCliente:
+        type: 'string'
+      direccion:
+        type: 'string'
+      telefono:
+        type: 'string'
+      cedula:
+        type: 'string'
+      idTipoEntrega:
+        type: 'integer'
+      idModalidadDespacho:
+        type: 'integer'
+      fechaFrontEnd:
+        type: 'string'
+      fechaPrometida:
+        type: 'string'
+      qtyPlu:
+        type: 'integer'
+      qtyUnidades:
+        type: 'integer'
