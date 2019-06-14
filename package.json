@@ -37,5 +37,12 @@
     "ts-jest": "^24.0.2",
     "ts-node": "^8.2.0",
     "typescript": "^3.5.2"
-  }
+  },
+  "keywords": [
+    "node",
+    "eslint",
+    "typescript",
+    "prettier",
+    "nodemon"
+  ]
 }
